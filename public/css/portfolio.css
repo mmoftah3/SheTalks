@@ -99,6 +99,8 @@ strong { font-weight: var(--fw-bold) }
 
 .link-item a {
     color: #2E3038;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 200;
 }
 
 .link-item:hover {
