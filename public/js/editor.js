@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
 import { getFirestore } from "firebase/firestore/lite";
@@ -19,9 +18,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-=======
-//selecting the html elements
->>>>>>> parent of cac0396 (firebase)
 const blogTitleField = document.querySelector(".title");
 const articleFeild = document.querySelector(".article");
 
