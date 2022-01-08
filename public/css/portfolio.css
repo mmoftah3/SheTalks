@@ -26,6 +26,10 @@
     
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
           0.125em 0.125em 0.25em rgba(0,0,0,.15);
+
+    --main-bg: #F3D9DC;
+    --header-bg: #f7f7f7;
+    --link-hover: #C7C7D1;
 }
 
 @media (min-width: 800px) {
@@ -62,6 +66,44 @@ strong { font-weight: var(--fw-bold) }
 :focus { 
     outline: 3px solid var(--clr-beige2);
     outline-offset: 3px;
+}
+
+.navbar {
+    display: flex;
+
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+
+    top: 0;
+    left: 0;
+   
+    justify-content: space-between;
+    align-items: stretch;
+
+    background-color: var(--header-bg);
+}
+
+.links-container {
+    display: flex;
+
+    align-items: center;
+
+    list-style: none;
+}
+
+.link-item {
+    transition-duration: 0.8s;
+}
+
+.link-item:hover {
+    background-color: var(--link-hover);
+}
+
+.link {
+    padding: 20px;
+
+    text-decoration: none;
 }
 
 /* Buttons */
