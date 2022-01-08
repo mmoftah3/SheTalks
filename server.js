@@ -20,7 +20,6 @@ app.get("/editor", (req, res) => {
   res.sendFile(path.join(initial_path, "editor.html"));
 });
 
-//route for uploads
 app.post("/upload", (req, res) => {
   let file = req.files.image;
   let date = new Date();
@@ -39,8 +38,6 @@ app.post("/upload", (req, res) => {
     }
   });
 });
-
-//listen at port 3000
 app.listen("3000", () => {
   console.log("listening....");
 });
