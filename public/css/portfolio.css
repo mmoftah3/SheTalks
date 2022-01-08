@@ -93,7 +93,12 @@ strong { font-weight: var(--fw-bold) }
 }
 
 .link-item {
+
     transition-duration: 0.8s;
+}
+
+.link-item a {
+    color: #2E3038;
 }
 
 .link-item:hover {
