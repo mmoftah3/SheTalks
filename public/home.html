@@ -1,41 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SheTalks</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap"
+      rel="stylesheet" />
     <link rel="stylesheet" href="css/home.css" />
   </head>
+
   <body>
     <nav class="navbar">
-      <img src="img/logo.png" class="logo" alt=""  width="250" height="100"/>
-      </br>
-      </br>
-       </br>
-      </br>
-       </br>
-      </br>
+      <img src="img/logo.png" class="logo" alt="" />
       <ul class="links-container">
-        <li class="link-item"><a href="/" class="link">home</a></li>
-        <li class="link-item">
-          <a href="/editor" class="link">Start Blogging</a>
-        </li>
-        <li class="link-item">
-          <a href="/chat" class="link">Chat with a mentor</a>
-        </li>
-        <li class="link-item">
-          <a href="/quiz" class="link">Get Paired</a>
-        </li>
+        <li class="link-item"><a href="dashboard.html" class="link">Home</a></li>
+        <li class="link-item"><a href="home.html" class="link">My Blog</a></li>
+        <li class="link-item"><a href="chat.html" class="link">Chat</a></li>
+        <li class="link-item"><a href="/Search" class="link">Search</a></li>
       </ul>
-    
-
     </nav>
+
     <header class="header">
       <div class="content">
         <h1 class="heading">
@@ -43,25 +34,27 @@
           for
           <span class="no-fill">Girls</span>
         </h1>
-      </br>
-    </br>
+        </br>
+        </br>
         <a href="/editor" class="btn">write a blog about women in STEM</a>
       </div>
     </header>
 
     <section class="blogs-section">
-    <div class="blog-card">
+      <div class="blog-card">
         <img src="img/STEM.png" class="blog-image" alt="">
         <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
-        <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos porro repellat harum. Adipisci tempora corporis rem cum.</p>
+        <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos
+          porro repellat harum. Adipisci tempora corporis rem cum.</p>
         <a href="/" class="btn dark">read</a>
-    </div>
-</section>
+      </div>
+    </section>
 
- <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 
     <script src="js/firebase.js"></script>
     <script src="js/home.js"></script>
   </body>
+
 </html>
