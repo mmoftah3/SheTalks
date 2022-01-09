@@ -1,23 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
-import { getFirestore } from "firebase/firestore/lite";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyB8-b-aBBC2h0u0yS4uLyiY899syPx_gdg",
-  authDomain: "hack-6de75.firebaseapp.com",
-  projectId: "hack-6de75",
-  storageBucket: "hack-6de75.appspot.com",
-  messagingSenderId: "204102963969",
-  appId: "1:204102963969:web:bf7ff2c0229d289d7b0100",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
 const blogTitleField = document.querySelector(".title");
 const articleFeild = document.querySelector(".article");
 
@@ -29,8 +9,6 @@ let bannerPath;
 const publishBtn = document.querySelector(".publish-btn");
 const uploadInput = document.querySelector("#image-upload");
 
-//add change events to our upload inputs and to process them
-
 bannerImage.addEventListener("change", () => {
   uploadImage(bannerImage, "banner");
 });
@@ -39,7 +17,6 @@ uploadInput.addEventListener("change", () => {
   uploadImage(uploadInput, "image");
 });
 
-//upload image function
 const uploadImage = (uploadFile, uploadType) => {
   const [file] = uploadFile.files;
   if (file && file.type.includes("image")) {
@@ -64,7 +41,6 @@ const uploadImage = (uploadFile, uploadType) => {
   }
 };
 
-//add the image
 const addImage = (imagepath, alt) => {
   let curPos = articleFeild.selectionStart;
   let textToInsert = `\r![${alt}](${imagepath})\r`;
@@ -73,3 +49,52 @@ const addImage = (imagepath, alt) => {
     textToInsert +
     articleFeild.value.slice(curPos);
 };
+
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+publishBtn.addEventListener("click", () => {
+  if (articleFeild.value.length && blogTitleField.value.length) {
+    // generating id
+    let letters = "abcdefghijklmnopqrstuvwxyz";
+    let blogTitle = blogTitleField.value.split(" ").join("-");
+    let id = "";
+    for (let i = 0; i < 4; i++) {
+      id += letters[Math.floor(Math.random() * letters.length)];
+    }
+
+    // setting up docName
+    let docName = `${blogTitle}-${id}`;
+    let date = new Date(); // for published at info
+
+    //access firstore with db variable;
+    db.collection("blogs")
+      .doc(docName)
+      .set({
+        title: blogTitleField.value,
+        article: articleFeild.value,
+        bannerImage: bannerPath,
+        publishedAt: `${date.getDate()} ${
+          months[date.getMonth()]
+        } ${date.getFullYear()}`,
+      })
+      .then(() => {
+        location.href = `/${docName}`;
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+});
